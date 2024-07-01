@@ -42,9 +42,9 @@ export default function App() {
 
     function pokedisplay() {
         if(score > 2) {
-            console.log(score);
-            const pokeObj = {pokemon: pokemon, click: false};
-            setChild(prev => [...prev, pokeObj]);
+        console.log(score);
+        const pokeObj = {pokemon: pokemon, click: false};
+        setChild(prev => [...prev, pokeObj]);
         }
     }
 
