@@ -10,7 +10,6 @@ export default function App() {
     const {score, updateScore} = useScore();
 
     useEffect(() => {
-        // Load score from localStorage on component mount
         const savedScore = localStorage.getItem('score');
         if (savedScore) {
             updateScore(parseInt(savedScore));
@@ -18,7 +17,6 @@ export default function App() {
     }, [updateScore]);
 
     useEffect(() => {
-        // Save score to localStorage whenever it changes
         localStorage.setItem('score', score.toString());
     }, [score]);
 
@@ -41,11 +39,10 @@ export default function App() {
     }, []);
 
     function pokedisplay() {
-        if(score > 2) {
         console.log(score);
         const pokeObj = {pokemon: pokemon, click: false};
         setChild(prev => [...prev, pokeObj]);
-        }
+        
     }
 
     return( 
