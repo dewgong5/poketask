@@ -47,6 +47,9 @@ export default function App({identity, setIdentity}) {
 
     }
 
+    function signRedirect() {
+        navigate('/signup');
+    }
 
     
     return (
@@ -62,7 +65,7 @@ export default function App({identity, setIdentity}) {
                 <label className="font-semibold">Password:</label>
                 <input onChange={(e) => setPass(e.target.value)} className="bg-black h-10 px-6 rounded-md text-white" placeholder='Type your password'></input>
                 <button onClick={PlayRedirect} className="font-bold bg-black h-10 px-24 mt-3 text-white rounded-md hover:bg-slate-300 hover:text-slate-900">Login</button>
-                <div>Don't have an account? <a className='text-blue-700 hover:underline decoration-blue-700' href="/signup">Sign Up</a></div>
+                <div>Don't have an account? <a className='text-blue-700 hover:underline decoration-blue-700' onClick={signRedirect}>Sign Up</a></div>
                 </div>
             </div>
             <div className='flex justify-center items-center'>
