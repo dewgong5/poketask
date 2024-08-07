@@ -1,27 +1,21 @@
 import {useEffect, useState} from 'react';
 import Poke from './Pokemon.jsx'
-import {useScore} from './Score.jsx'
+import myImage from '../images/bg-grass.png';
+import { useNavigate } from 'react-router-dom';
 
-
-
-export default function App() {
+export default function App({iden}) {
     const [pokemon, setPokemon] = useState(null);
+    const [stat, setStat] = useState(false);
     const [childElement, setChild] = useState([]);
-    const {score, updateScore} = useScore();
-
-    useEffect(() => {
-        const savedScore = localStorage.getItem('score');
-        if (savedScore) {
-            updateScore(parseInt(savedScore));
-        }
-    }, [updateScore]);
-
-    useEffect(() => {
-        localStorage.setItem('score', score.toString());
-    }, [score]);
+    const [mousePos, setPos] = useState({});
+    const navigate = useNavigate();
 
     useEffect(()=> {
-        fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+        const url = "https://poke-api-storage-v1.vercel.app/" + iden;
+        if (iden === "") {
+            navigate('/')
+        }
+        fetch(url)
         .then(function(response) {
         return response;
         })
@@ -29,8 +23,9 @@ export default function App() {
         return r.json();
         })
         .then(function(j) {
-        setPokemon(j);
+        setPokemon(j.pokemons);
         console.log(j);
+        setStat(true);
         })
         .catch(function(e) {
         alert("pokemon not found");
@@ -38,19 +33,35 @@ export default function App() {
         })
     }, []);
 
-    function pokedisplay() {
-        console.log(score);
-        const pokeObj = {pokemon: pokemon, click: false};
-        setChild(prev => [...prev, pokeObj]);
-        
+    function posChange(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        setPos({xcord: x, ycord: y})
+        console.log(mousePos);
     }
 
+    function bigdisplay() {
+            if (Array.isArray(pokemon)) {
+                setChild(pokemon);
+            } else {
+                setChild([]);
+            }
+    }
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            bigdisplay();
+        }, 300);
+    
+        return () => clearTimeout(timer); 
+    }, [stat]);
+
     return( 
-        <div className="flex items-center justify-center">
-            <div className="mt-9 bg-slate-400 w-2/3 ml-5" style={{ height: '500px' }}>
-                <button onClick={pokedisplay} className='bg-blue-400'>Add!</button>
+        <div className="flex flex-col items-center justify-center">
+            <div onClick = {posChange} className="mt-9 bg-slate-300 ml-5" style={{width: '1600px', height: '700px' }}>
+                <img style={{width: '1600px', height: '700px' }} src ={myImage}/>
                 {childElement.map((po) => {
-                    return <Poke pokemon={po.pokemon}/>;
+                    return <Poke pokemon={po} position = {mousePos} />;
                 })}
             </div>
         </div>
