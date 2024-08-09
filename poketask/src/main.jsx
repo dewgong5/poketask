@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import App from './App.jsx';
 import ReactDOM from 'react-dom/client';
-import { inject } from '@vercel/analytics/react';
+import { inject } from '@vercel/analytics';
 
 inject();
 
