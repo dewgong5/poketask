@@ -5,11 +5,16 @@ import Garden from './pages/PokeGarden.jsx';
 import Shop from './pages/Shop.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
+import { inject } from '@vercel/analytics/react';
+
 
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function App() {
+
+  inject();
+  
   const [ID, setID] = useState("");
 
   return (
