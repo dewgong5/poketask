@@ -1,7 +1,8 @@
 # 🐻Introducing PokeMath!
+A full-stack web application that gamifies math through Pokemon characters!
+
 ![image](https://github.com/user-attachments/assets/6915eeae-28c2-4dd2-8c42-4e60195997f1)
 
-# A full-stack web application that gamifies math through Pokemon characters!
 
 ## Table of Contents
 - [About the Project](#about-the-project)
