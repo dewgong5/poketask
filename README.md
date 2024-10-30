@@ -1,6 +1,8 @@
 # 🐻Introducing PokeMath!
 A full-stack web application that gamifies math through Pokemon characters!
 
+NOTE: This repository is the frontend code, the backend is located in https://github.com/dewgong5/poke-api-storage
+
 ![image](https://github.com/user-attachments/assets/5b901fdd-6d61-4efd-a5e6-29a79fa22260)
 
 ## 🦖Can I try it?
