@@ -15,12 +15,10 @@
 - **Database**: MongoDB & Mongoose
 
 ## 🐼Overview
-- User Authentication
-- Math Questions
-- Pokemon Habitat
 - Shop for Pokemon
-- -[About the Project](#about-the-project)
-- [Technologies Used](#technologies-used)
+- User Authentication
+- [Pokemon Habitat](#pokemon-habitat)
+- [Math Questions](#math-questions)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
@@ -29,4 +27,6 @@
 
 ---
 
-## About the Project
+## 🦖Pokemon Habitat
+
+## 🤖Math Questions
