@@ -8,4 +8,8 @@
 - Password: "bola"
 - (That's for the test accounts)
 
-## Overview
+## 🖊️Technologies Used
+- **Frontend**: React & Tailwind CSS
+- **Backend**: Node.js & Express
+- **Database**: MongoDB & Mongoose
+
