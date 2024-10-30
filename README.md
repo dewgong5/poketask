@@ -7,6 +7,7 @@ A full-stack web application that gamifies math through Pokemon characters!
 - **Frontend**: React, JavaScript & TailWind
 - **Backend**: Node.js & Express
 - **Database**: MongoDB & Mongoose
+- **Other**: Vercel & Postman
 
 
 ## 🐻‍❄️Table of Contents
